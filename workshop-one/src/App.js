@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import Task from './tasks/Task'
+//import Task from './tasks/Task'
+import Task from './tasks/FunctionalTask'
 
 const dummyTaskData = [
   {

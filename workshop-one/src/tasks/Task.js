@@ -14,9 +14,8 @@ class Task extends Component {
   }
 
   render() {
-        let className = `Task Task-Accepted__${this.state.accepted}`
     return (
-      <div className={className}>
+      <div className={`Task Task-Accepted__${this.state.accepted}`}>
         <h2>{this.props.title}</h2>
         <p>{this.props.description}</p>
 
