@@ -27,10 +27,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
         </header>
         <section>
-          <Task title="A" description="1" />
-          <Task title="B" description="2"  />
-          <Task title="C" description="3"  />
-          <Task title="D" description="4"  />
+          {dummyTaskData.map((item, i) => 
+            <Task key={i} title={item.title} description={item.description}/>
+          )}
         </section>
       </div>
     );
