@@ -4,7 +4,8 @@
   "description": "A starter template for the inheritance and polymorphism workshop",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "serve ."
   },
   "author": "Ali Blackwell",
   "license": "ISC",

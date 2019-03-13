@@ -1,12 +1,55 @@
 class Farmer {
     constructor(userName) {
-        this.field = null
-        this.userName = userName
-        this.image = loadImage('./images/farmer.png')
-        this.x = 100
-        this.y = 100
-        this.width = 60
-        this.height = 60
+        this._field = null
+        this._userName = userName
+        this._image = loadImage('./images/farmer.png')
+        this._x = 100
+        this._y = 100
+        this._width = 60
+        this._height = 60
+    }
+
+    getField() {
+        return this._field;
+    }
+    getUsername() {
+        return this._userName;
+    }
+    getImage() {
+        return this._image;
+    }
+    getX() {
+        return this._x;
+    }
+    getY() {
+        return this._y;
+    }
+    getWidth() {
+        return this._width;
+    }
+    getHeight() {
+        return this._height;
+    }
+    setField(field) {
+        this._field = field;
+    }
+    setUsername(userName) {
+        this._userName = userName;
+    }
+    setImage(image) {
+        this._image = image;
+    }
+    setX(x) {
+        this._x = x;
+    }
+    setY(y) {
+        this._y = y;
+    }
+    setWidth(width) {
+        this._width = width;
+    }
+    setHeight(height) {
+        this._height = height;
     }
 
     speak(words) {
@@ -14,28 +57,27 @@ class Farmer {
     }
 
     setActiveField(field) {
-        this.field = field
+        this._field = field
     }
 
     update() {
         if (keyIsDown(RIGHT_ARROW)) {
-            this.x = this.x + 3
+            this.setX(this.getX() + 3);
         }
         if (keyIsDown(LEFT_ARROW)) {
-            this.x = this.x - 3
+            this.setX(this.getX() - 3);
         }
         if (keyIsDown(DOWN_ARROW)) {
-            this.y = this.y + 3
+            this.setY(this.getY() + 3);
         }
         if (keyIsDown(UP_ARROW)) {
-            this.y = this.y - 3
+            this.setY(this.getY() - 3);
         }
-
     }
 
     farmerKeyPressed() {
         if (keyCode == ENTER) {
-            this.field.plant(this.x, this.y)
+            this.getField().plant(this.getX(), this.getY())
         }
     }
 
@@ -43,11 +85,11 @@ class Farmer {
         var bobAmount = Math.sin(millis() / 60) * 3
 
         image(
-            this.image,
-            this.x,
-            this.y + bobAmount,
-            this.width,
-            this.height
+            this.getImage(),
+            this.getX(),
+            this.getY() + bobAmount,
+            this.getWidth(),
+            this.getHeight()
         )
     }
 } // End of the Farmer class oooarrr

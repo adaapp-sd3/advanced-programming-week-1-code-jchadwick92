@@ -51,7 +51,7 @@ function draw() {
         noStroke()
         fill('black')
         textSize(20)
-        text(activeField.name, 25, 40)
+        text(activeField.getName(), 25, 40)
     }
 }
 
@@ -59,11 +59,9 @@ function setActiveFieldFromFarmerPosition() {
     activeField = null
     farmer.setActiveField(null)
     for (var field of fields) {
-        if (field.containsPoint(farmer.x, farmer.y)) {
+        if (field.containsPoint(farmer.getX(), farmer.getY())) {
             activeField = field
             farmer.setActiveField(field)
         }
-        
-        
     }
 }
